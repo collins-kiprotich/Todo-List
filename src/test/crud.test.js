@@ -3,7 +3,7 @@
  */
 
 import {
-  add, remove, populateList, deleteAllCompleted, edit,
+  add, remove, populateList,
 } from '../crud.js';
 import ToDo from '../todoList.js';
 
