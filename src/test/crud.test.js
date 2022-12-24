@@ -42,5 +42,16 @@ describe('test for todo list function', () => {
       const storage = JSON.parse(localStorage.getItem('todoList'));
       expect(storage).toHaveLength(1);
     });
+    test('test for html DOM when remove a task', () => {
+      document.body.innerHTML = '<div>'
+        + '  <ul id="todo-list"><li></li></ul>'
+        + '</div>';
+      add('hello');
+      add('hello');
+      remove(0);
+      populateList();
+      const listElements = document.querySelectorAll('#todo-list li');
+      expect(listElements).toHaveLength(1);
+    });
   });
 });
