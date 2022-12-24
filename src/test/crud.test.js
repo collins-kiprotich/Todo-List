@@ -42,16 +42,5 @@ describe('test for todo list function', () => {
       const storage = JSON.parse(localStorage.getItem('todoList'));
       expect(storage).toHaveLength(1);
     });
-
-    describe('test for delete all completed function', () => {
-      test('Delete all completed', () => {
-        const newItem = new ToDo('some text');
-        newItem.update();
-        deleteAllCompleted(ToDo);
-        ToDo.list.forEach((item) => {
-          expect(item.complete).toBeFalsy();
-        });
-      });
-    });
   });
 });
