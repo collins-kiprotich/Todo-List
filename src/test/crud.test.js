@@ -3,7 +3,7 @@
  */
 
 import {
-  add, remove, populateList,
+  add, remove, populateList, edit, deleteAllCompleted,
 } from '../crud.js';
 import ToDo from '../todoList.js';
 
@@ -41,6 +41,44 @@ describe('test for todo list function', () => {
       remove(0);
       const storage = JSON.parse(localStorage.getItem('todoList'));
       expect(storage).toHaveLength(1);
+    });
+    test('test for html DOM when remove a task', () => {
+      document.body.innerHTML = '<div>'
+        + '  <ul id="todo-list"><li></li></ul>'
+        + '</div>';
+      add('hello');
+      add('hello');
+      remove(0);
+      populateList();
+      const listElements = document.querySelectorAll('#todo-list li');
+      expect(listElements).toHaveLength(1);
+    });
+  });
+  describe('test for update status', () => {
+    test('Update complete status', () => {
+      const newItem = new ToDo('some text');
+      expect(newItem.complete).toBeFalsy();
+      newItem.update();
+      expect(newItem.complete).toBeTruthy();
+    });
+  });
+
+  describe('test for edit function', () => {
+    test('Edit item', () => {
+      add('hello');
+      edit(0, 'edited text');
+      const storage = JSON.parse(localStorage.getItem('todoList'));
+      expect(storage[0].description).toBe('edited text');
+    });
+  });
+  describe('test for delete all completed function', () => {
+    test('Delete all completed', () => {
+      const newItem = new ToDo('some text');
+      newItem.update();
+      deleteAllCompleted(ToDo);
+      ToDo.list.forEach((item) => {
+        expect(item.complete).toBeFalsy();
+      });
     });
   });
 });
