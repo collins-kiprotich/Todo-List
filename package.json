@@ -20,14 +20,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rbhatt1999/to-do-list.git"
+    "url": "https://github.com/collins-kiprotich/Todo-List.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://rbhatt1999.github.io/to-do-list",
+  "homepage": "https://github.com/collins-kiprotich/Todo-List",
   "bugs": {
-    "url": "https://github.com/rbhatt1999/to-do-list/issues"
+    "url": "https://github.com/collins-kiprotich/Todo-List/issues"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.19.6",
@@ -53,7 +53,6 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "canvas": "^2.11.0",
     "gh-pages": "^4.0.0"
   }
 }
