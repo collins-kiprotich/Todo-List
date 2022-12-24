@@ -53,6 +53,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "canvas": "^2.11.0",
     "gh-pages": "^4.0.0"
   }
 }

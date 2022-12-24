@@ -1,4 +1,3 @@
-
 import './style.css';
 import { add, deleteAllCompleted, populateList } from './crud.js';
 import ToDo from './todoList.js';
